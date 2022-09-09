@@ -7,7 +7,7 @@ const main = async () => {
   const repoOwner = context.repo.owner;
   const githubToken = core.getInput("github-token");
   const testCommand = core.getInput("test-command") || "npx jest";
-  const prNumber = context.payload.number;
+  const prNumber = context.event.number;
 
   const githubClient = new GitHub(githubToken);
 
